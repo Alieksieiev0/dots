@@ -11,13 +11,13 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Scripts
-. "$HOME/Scripts"
+. "$HOME/scripts"
 
 
 # Binds
 set -o vi
-bindkey -s ^o ". ~/Scripts/search_programming.sh\n"
-bindkey -s ^s "~/Scripts/cht.sh\n"
+bindkey -s ^o ". ~/scripts/search_programming.sh\n"
+bindkey -s ^s "~/scripts/cht.sh\n"
 
 # Path
 export EDITOR='nvim'
