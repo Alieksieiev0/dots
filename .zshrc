@@ -23,6 +23,7 @@ bindkey -s ^s "~/Scripts/cht.sh\n"
 export EDITOR='nvim'
 export GOPATH=$HOME/go
 export XDG_SCREENSHOTS_DIR=$HOME/Screenshots
+export DOCKER_BUILDKIT=1
 
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 PATH=~/.local/share:$PATH

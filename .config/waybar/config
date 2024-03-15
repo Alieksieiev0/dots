@@ -5,7 +5,7 @@
 
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["custom/playerctl", "custom/playerlabel"],
-    "modules-right": ["pulseaudio", "cpu", "memory", "disk", "custom/pacman", "custom/dunst", "custom/notification", "clock", "custom/weather"],
+    "modules-right": ["pulseaudio", "cpu", "memory", "disk", "custom/updates", "custom/dunst", "custom/notification", "clock", "custom/weather"],
 
      "hyprland/workspaces": {
          "disable-scroll": true,
@@ -14,10 +14,8 @@
          "format-icons": {
              "1": " ",
              "2": " ",
-             "3": " ",
-             "4": " ",
-             "5": "󰒱 ",
-             "6": " ",
+             "3": " ",
+             "4": " ",
              "urgent": " ",
              "focused": " ",
              "default": " "
@@ -94,17 +92,17 @@
         "on-click": "dunstctl set-paused toggle",
         "restart-interval": 1,
     },
-    "custom/pacman": {
-        "format": "{} {icon}",
-        "return-type": "json",
-        "format-icons": {
-            "pending-updates": "󱍷 ",
-            "updated": "󰂪 "
-        },
-        "exec-if": "which waybar-updates",
-        "exec": "waybar-updates"
-    },
-    "custom/weather": {
+  "custom/updates": {
+       "format": "{} {icon}",
+       "return-type": "json",
+       "format-icons": {
+           "has-updates": "󱍷",
+           "updated": "󰂪"
+       },
+       "exec-if": "which waybar-module-pacman-updates",
+       "exec": "waybar-module-pacman-updates"
+   },
+   "custom/weather": {
         "format": "{} ° ",
     "tooltip": true,
     "interval": 3600,
