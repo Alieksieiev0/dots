@@ -16,8 +16,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Binds
 set -o vi
-bindkey -s ^o ". ~/scripts/search_programming.sh\n"
-bindkey -s ^s "~/scripts/cht.sh\n"
+bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^s "cht.sh\n"
 
 # Path
 export EDITOR='nvim'
@@ -28,6 +28,7 @@ export DOCKER_BUILDKIT=1
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 PATH=~/.local/share:$PATH
 PATH=$GOPATH/bin:$PATH
+PATH=~/scripts:$PATH
 
 if [ -n "$PATH" ]; then
   old_PATH=$PATH:; PATH=
@@ -45,8 +46,8 @@ fi
 
 
 
-#Start Hyprland
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then 
   exec Hyprland
 fi
 
+eval "$(direnv hook zsh)"
